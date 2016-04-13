@@ -1,3 +1,21 @@
+This is yet another derivative of the Arduino PID AutoTune Library.  (Original notice posted below.)
+
+Caution - Not really Arduino any more but it's close and the name reflects the origin of the code.
+
+This does run on a NI roboRIO.  I doubt it would be hard to put back on an Arduino.  It's actually a little more generic C++.
+
+Another AutoTune (pull request waiting, probably forever, to be merged with the original) may be superior but I had this one done before that one was added to GitHub.  (It is missing DIRECT/REVERSE which I added to this version.)
+
+The orignal AutoTune is an excellent start and has some issues that had to be fixed and enhanced before it was good enough for my purposes.  And in the spirit of one engineer's comment - if you don't like the tuning then run it again - I let the tuner run longer to have multiple tuning parameter choices and I plot the output so I understand and can readily verify what the tuner has done.
+
+The DIRECT/REVERSE option has been added.
+
+This version finds maxima without spurious junk that confounds accurate tuning.
+
+The example program is tuning a pair of FIRST FRC robot motors to run at a setpoint speed during a tank turn.  Good for running at low speed during autonomous movement looking for taking aim at the target using camera vision.  The tuning parameters are used in the Talon SRX motor contoller which has the built-in PID controller.
+
+Original Notice:
+
 /**********************************************************************************************
  * Arduino PID AutoTune Library - Version 0.0.1
  * by Brett Beauregard <br3ttb@gmail.com> brettbeauregard.com
@@ -29,9 +47,3 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
  * POSSIBILITY OF SUCH DAMAGE.
  **********************************************************************************************/
- 
- Note:  I'd really hoped to have this more polished before release, but with the
-		osPID coming out I felt that this needed to be out there NOW.  if you 
-		encounter any issues please contact me, or post to the diy-pid-control
-		google group.
- 
