@@ -61,9 +61,6 @@ int PID_ATune::Runtime()
 	
 	//oscillate the output base on the input's relation to the setpoint
 	
-//	if(refVal>*setpoint+noiseBand) *output = outputStart-oStep;
-//	else if (refVal<*setpoint-noiseBand) *output = outputStart+oStep;
-
 	if(refVal>*setpoint+noiseBand) *output = outputStart - (controllerDirection==DIRECT ? oStep: -oStep);
 	else if (refVal<*setpoint-noiseBand) *output = outputStart + (controllerDirection==DIRECT ? oStep: -oStep);
 
