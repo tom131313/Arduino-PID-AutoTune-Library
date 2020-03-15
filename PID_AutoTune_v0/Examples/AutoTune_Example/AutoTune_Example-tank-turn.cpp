@@ -313,7 +313,7 @@ while (mDS.IsEnabled())
 				double PuUnits = 1000.L;
 #endif
 
-				kp = kp * PuUnits;
+				kp = kp * KuUnits;
 				ki = ki * KuUnits/PuUnits;
 				kd = kd * KuUnits*PuUnits;
 				std::cout << "\nCAN Talon Control with Kp= " << kp << " Ki=" << ki << " Kd=" << kd << "\n";
